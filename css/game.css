@@ -143,3 +143,64 @@ body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opac
 #gearCloset .closet-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}#gearCloset .closet-label{margin:8px 0 5px}
 #gearCloset [hidden]{display:none!important}
 @media(max-height:560px){#gearCloset{top:auto;height:min(310px,55dvh)}}
+
+/* Unified shop catalog */
+#shop .drawer-head{display:block;margin-bottom:0}
+#shop .drawer-head h3,#shop .shop-section h3{margin:0 0 9px;font-size:15px}
+#shop .shop-section{margin-top:18px}
+#shop .wardrobe,#shop .mini-catalog,#shop .catalog{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;width:100%}
+#shop .outfit-btn,#shop .shop-chip,#shop .item{position:relative;width:100%;min-width:0;min-height:96px;margin:0;padding:11px 9px;border:1px solid #9a7cbd;border-radius:15px;background:linear-gradient(145deg,#433366,#2b2550);color:#fff8ff;box-shadow:inset 0 1px #fff4,0 4px 0 #1c173b;text-align:center;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-size:12px;line-height:1.25}
+#shop .outfit-btn.locked,#shop .shop-chip.locked{border-style:solid;color:#fff8ff}
+#shop .outfit-btn small,#shop .shop-chip>small,#shop .item>small{display:block;margin:2px 0 0;padding:3px 7px;border-radius:99px;background:#211b42;color:#a7eee3;font-size:10px;line-height:1.2}
+#shop .shop-chip strong{display:block;width:100%;font-size:12px;text-align:center}
+#shop .item .sprite{width:52px;height:52px;margin:-4px auto 0}
+#shop .shop-wand{display:block;width:38px;height:48px;margin:0 auto 3px}
+#shop .shop-transform{display:block;width:42px;height:42px;margin:0 auto 4px}
+#shop .attack-stat{margin:4px auto 0!important;font-size:9px!important}
+#shop .outfit-btn.active,#shop .shop-chip.active,#shop .item:active{border-color:#9ff3e7;background:linear-gradient(145deg,#396872,#554370);box-shadow:inset 0 1px #fff5,0 4px 0 #21454b,0 0 0 2px #9ff3e733}
+#shop .sold-out{grid-column:1/-1}
+
+/* Luna's research lab: furniture and decoration UI are replaced by crafting. */
+.workshop-room{background:radial-gradient(circle at 50% 42%,#b9fff544 0 8%,transparent 29%),linear-gradient(145deg,#171530 0 48%,#302151 48% 52%,#171b3b 52%);border-color:#9d83ca;box-shadow:inset 0 0 55px #7de9dc22,0 16px 38px #090720aa}
+.workshop-room:before{display:block;content:"";position:absolute;inset:52% 0 0;background:repeating-linear-gradient(150deg,#413462 0 2px,transparent 2px 34px),repeating-linear-gradient(30deg,#413462 0 2px,#211b41 2px 34px);transform:none}
+.workshop-room:not(.transforming):after{background:radial-gradient(circle at 50% 50%,transparent 0 35%,#120e2b88 100%);box-shadow:inset 0 0 28px #a8fff333}
+.workshop-core{position:absolute;z-index:4;left:50%;top:33%;width:25%;aspect-ratio:1;transform:translate(-50%,-50%);border:2px solid #f6bde7;border-radius:50%;box-shadow:0 0 0 8px #bd8eea22,0 0 28px #81eadc88}
+.workshop-core:before,.workshop-core:after{content:"";position:absolute;inset:15%;border:1px solid #a9f7ed;transform:rotate(45deg)}.workshop-core:after{inset:31%;border-radius:50%;background:#fff6c8;box-shadow:0 0 18px #fff}
+.workshop-core span{position:absolute;inset:-18%;border:1px dashed #d7a7ee;border-radius:50%;animation:labSpin 12s linear infinite}
+@keyframes labSpin{to{transform:rotate(360deg)}}
+.research-lab{position:absolute;z-index:45;left:0;right:0;bottom:calc(76px + env(safe-area-inset-bottom));max-height:min(430px,58dvh);overflow-y:auto;padding:13px;border:2px solid #aa8dd2;border-radius:22px;background:linear-gradient(150deg,#3b2c63,#211d46);box-shadow:inset 0 1px #fff4,0 14px 32px #100a2caa}
+.research-lab[hidden]{display:none}.research-head{position:sticky;top:-13px;z-index:2;display:flex;align-items:center;justify-content:space-between;margin:-1px -1px 10px;padding:4px 1px 10px;background:#392960}.research-head strong{color:#fff2fb;font-size:17px}.research-head .icon-btn{width:38px;min-height:38px}
+.research-stock{display:flex;gap:8px;margin-bottom:11px}.research-stock span{flex:1;padding:8px;border:1px solid #8a72b3;border-radius:12px;background:#241d48;color:#e9ddf5;font-size:11px;text-align:center}.research-stock b{color:#a6f5e9}
+.research-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.research-card{min-height:112px;padding:10px;border:1px solid #aa8bcf;border-radius:16px;background:linear-gradient(145deg,#49366f,#2b2453);color:#fffaff;box-shadow:inset 0 1px #fff4,0 4px 0 #1d1740;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}.research-card.wand-upgrade{grid-column:1/-1}.research-card:disabled{opacity:.5}.research-icon{display:grid;place-items:center;width:38px;height:38px;border:1px solid #ffd4ed;border-radius:50%;background:radial-gradient(circle,#fff7cf,#d596df 38%,#56387d 72%);color:#4a285f;font-size:20px;box-shadow:0 0 14px #e5a8dd88}.research-card strong{font-size:12px}.research-card small{padding:3px 7px;border-radius:99px;background:#211b42;color:#a7eee3;font-size:10px}
+@media(max-height:560px){.research-lab{bottom:68px;max-height:55dvh}}
+
+/* A lived-in magical atelier. */
+.workshop-room{background:linear-gradient(90deg,#241a3d 0 4%,transparent 4% 96%,#241a3d 96%),linear-gradient(#312343 0 52%,#4e3551 52% 55%,#302342 55%);border:5px solid #6e4e7c;box-shadow:inset 0 0 0 3px #d6a8dc33,inset 0 0 50px #130b29,0 16px 38px #090720aa}
+.workshop-room:before{display:block;inset:55% 0 0;background:repeating-linear-gradient(154deg,#3c2b4c 0 2px,transparent 2px 36px),repeating-linear-gradient(26deg,#3c2b4c 0 2px,#251b35 2px 36px);transform:perspective(360px) rotateX(8deg);transform-origin:top}
+.workshop-room:not(.transforming):after{background:radial-gradient(circle at 50% 70%,#af76da25,transparent 34%),linear-gradient(90deg,#120a2377,transparent 18% 82%,#120a2377);box-shadow:inset 0 0 36px #11091f}
+.workshop-shelf{position:absolute;z-index:4;left:6%;top:15%;width:27%;height:34%;border:5px solid #4b2e3e;border-radius:4px;background:linear-gradient(90deg,#41293a 0 5%,transparent 5% 95%,#41293a 95%),repeating-linear-gradient(0deg,#291d36 0 29%,#80556a 29% 34%);box-shadow:inset 0 0 0 2px #c4918540,4px 6px 0 #140d20}
+.workshop-shelf i{position:absolute;bottom:9%;width:12%;height:24%;border:1px solid #f3d3e7;border-radius:45% 45% 24% 24%;box-shadow:0 0 8px currentColor}.workshop-shelf i:before{content:"";position:absolute;left:25%;right:25%;top:-24%;height:25%;background:#d5b7bd;border-radius:2px}.workshop-shelf i:nth-child(1){left:10%;color:#9cf2e5;background:#4fc4b9}.workshop-shelf i:nth-child(2){left:29%;height:17%;color:#ffc6e8;background:#d363a4}.workshop-shelf i:nth-child(3){left:48%;bottom:42%;color:#f9ee91;background:#d4b744}.workshop-shelf i:nth-child(4){left:67%;bottom:42%;height:18%;color:#c5aaff;background:#8459c4}.workshop-shelf i:nth-child(5){left:76%;color:#91c9ff;background:#4e86ce}
+.workshop-desk{position:absolute;z-index:5;right:5%;top:31%;width:31%;height:17%;border:3px solid #573448;border-radius:5px;background:linear-gradient(#9a6680 0 18%,#5e3a50 18% 30%,#3f293f 30%);box-shadow:0 6px 0 #251728}.workshop-desk:before,.workshop-desk:after{content:"";position:absolute;top:96%;width:8%;height:80%;background:#42273b}.workshop-desk:before{left:10%}.workshop-desk:after{right:10%}
+.open-book{position:absolute;left:9%;top:-27%;width:47%;height:35%;background:linear-gradient(90deg,#f5e4c7 0 48%,#6f4c65 48% 52%,#f5e4c7 52%);clip-path:polygon(0 15%,46% 0,50% 12%,54% 0,100% 15%,93% 100%,51% 82%,49% 82%,7% 100%);filter:drop-shadow(0 3px 1px #1b1020)}
+.crystal-flask{position:absolute;right:12%;top:-45%;width:18%;aspect-ratio:.72;border:2px solid #cafff7;border-radius:48% 48% 35% 35%;background:linear-gradient(transparent 36%,#65d9cb 38%);box-shadow:0 0 12px #74e7d8}.crystal-flask:before{content:"";position:absolute;left:30%;right:30%;top:-35%;height:40%;border:2px solid #cafff7;border-bottom:0}
+.workshop-cauldron{position:absolute;z-index:5;left:9%;bottom:11%;width:23%;height:16%;border:3px solid #191323;border-radius:12% 12% 48% 48%;background:radial-gradient(ellipse at 50% 8%,#8bffdf 0 8%,#3dbba2 9% 23%,#302541 25%);box-shadow:inset 0 -8px #17111f,0 7px 0 #17111f,0 0 18px #6be4c766}.workshop-cauldron:before,.workshop-cauldron:after{content:"";position:absolute;bottom:-28%;width:12%;height:35%;background:#17111f}.workshop-cauldron:before{left:18%;transform:rotate(16deg)}.workshop-cauldron:after{right:18%;transform:rotate(-16deg)}
+.workshop-cauldron i{position:absolute;bottom:75%;width:8px;height:8px;border:1px solid #cafff7;border-radius:50%;background:#7ce6d2;box-shadow:0 0 8px #7ce6d2;animation:potionBubble 2.2s ease-in infinite}.workshop-cauldron i:nth-child(1){left:28%}.workshop-cauldron i:nth-child(2){left:51%;animation-delay:.7s}.workshop-cauldron i:nth-child(3){left:67%;animation-delay:1.3s}
+.workshop-core{left:50%;top:36%;width:17%;opacity:.72}
+@keyframes potionBubble{0%{transform:translateY(0) scale(.6);opacity:0}30%{opacity:1}100%{transform:translateY(-34px) scale(1.1);opacity:0}}
+
+/* Final atelier scene based on the user's workshop reference. */
+.workshop-room{aspect-ratio:4/3;background:#20172d url("../assets/luna-magic-atelier-bg-v2.png") center/cover no-repeat;border-color:#76526f;box-shadow:inset 0 0 0 2px #efd1e633,0 16px 38px #090720aa}
+.workshop-room:before,.workshop-room:not(.transforming):after,.workshop-shelf,.workshop-desk,.workshop-cauldron,.workshop-core{display:none}
+.workshop-room .cat{left:68%;bottom:5%;width:18%;filter:drop-shadow(3px 5px 1px #110c1b99)}
+.workshop-room .pet{left:86%;bottom:7%;width:11%;filter:drop-shadow(2px 4px 1px #110c1b99)}
+.workshop-room .wand-display{left:64%;bottom:23%;width:34px;height:55px}
+.workshop-room .transform-display{left:65%;bottom:24%;width:27px;height:27px}
+
+.workshop-room .workshop-cauldron{display:block;position:absolute;z-index:5;left:39.5%;top:27%;bottom:auto;width:22%;height:17%;border:0;border-radius:0;background:none;box-shadow:none;pointer-events:none}
+.workshop-room .workshop-cauldron:before,.workshop-room .workshop-cauldron:after{display:none}
+.workshop-room .workshop-cauldron i{position:absolute;bottom:4%;width:9px;height:9px;border:1px solid #f0d9ff;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff 0 12%,#c488ff 28%,#753fc5 72%);box-shadow:0 0 8px #b86fff,0 0 14px #744bd8;opacity:0;animation:atelierBubble 2.35s ease-in infinite}
+.workshop-room .workshop-cauldron i:nth-child(1){left:8%;--drift:-7px;animation-delay:0s}.workshop-room .workshop-cauldron i:nth-child(2){left:29%;width:6px;height:6px;--drift:5px;animation-delay:.45s}.workshop-room .workshop-cauldron i:nth-child(3){left:48%;width:11px;height:11px;--drift:-3px;animation-delay:.9s}.workshop-room .workshop-cauldron i:nth-child(4){left:68%;width:7px;height:7px;--drift:6px;animation-delay:1.3s}.workshop-room .workshop-cauldron i:nth-child(5){left:86%;width:5px;height:5px;--drift:-5px;animation-delay:1.75s}
+@keyframes atelierBubble{0%{transform:translate(0,0) scale(.45);opacity:0}16%{opacity:.95}72%{opacity:.8}100%{transform:translate(var(--drift),-38px) scale(1.15);opacity:0}}
+@media(prefers-reduced-motion:reduce){.workshop-room .workshop-cauldron i{animation:none;opacity:.65}}
+.research-card.starlight-upgrade{grid-column:1/-1;min-height:150px}.pet-ability{display:block;margin:4px 0;color:#f7d5ec;font-size:9px;font-style:normal;line-height:1.35}.potion-product strong{color:#ffe1f2}
+.shop-pet-image,.potion-product img{width:52px;height:52px;object-fit:contain;image-rendering:pixelated}.potion-action{display:grid;grid-template-columns:34px 1fr;align-items:center;text-align:left}.potion-action img{grid-row:1/3;width:30px;height:30px;object-fit:contain;image-rendering:pixelated}.potion-action small{margin:0}.luna-mp{bottom:37px}.luna-mp .hp-fill{background:linear-gradient(90deg,#558cf5,#9ddfff)}
